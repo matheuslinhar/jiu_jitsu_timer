@@ -1,0 +1,95 @@
+/* Estilos gerais do corpo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Preto mais suave para o fundo da página */
+  color: #FFFFFF; /* Branco para o texto */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container principal da aplicação */
+.App {
+  text-align: center;
+  background-color: #000000; /* Black Piano para o fundo da aplicação */
+  border-radius: 20px; /* Bordas arredondadas mais marcantes */
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8); /* Sombra mais pronunciada */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinha todos os elementos no centro */
+}
+
+/* Estilo do header */
+.header {
+  margin-bottom: 20px;
+}
+
+/* Estilo da imagem do logo */
+.logo {
+  width: 120px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  margin: 0 auto 20px; /* Centraliza e ajusta a margem inferior */
+}
+
+/* Estilo do título */
+h1 {
+  font-size: 2.5rem;
+  color: #DC143C; /* Vermelho Carmesim */
+  margin: 0;
+}
+
+/* Estilo dos botões de controle do timer */
+.timer-controls {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os botões */
+}
+
+/* Botões de controle do timer */
+.timer-controls button {
+  background: linear-gradient(135deg, #FF6347, #DC143C); /* Gradiente vibrante */
+  color: #FFFFFF; /* Branco para o texto dos botões */
+  border: none;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out; /* Transição suave */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 99, 71, 0.6); /* Efeito 4D com sombra interna e brilho */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7); /* Sombra de texto para um brilho leve */
+  transform: perspective(1px) translateZ(0); /* Ativa o contexto de empilhamento para sombras 3D */
+}
+
+/* Efeito 4D ao passar o mouse sobre os botões */
+.timer-controls button:hover {
+  transform: translateY(-6px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 99, 71, 0.8); /* Sombra mais intensa e brilho ao passar o mouse */
+}
+
+/* Botão desativado */
+.timer-controls button:disabled {
+  background: #555555;
+  color: #888888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Estilo dos temporizadores */
+.timer-display {
+  font-size: 4rem;
+  margin: 20px 0;
+}
+
+/* Estilo das opções de temporizador */
+.timer-option {
+  margin: 10px;
+}

@@ -1,0 +1,156 @@
+/* Estilos gerais do corpo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Fundo preto piano */
+  color: #FFFFFF; /* Texto branco */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container principal do timer */
+.timer {
+  text-align: center;
+  background-color: #222222; /* Cinza escuro para o fundo da aplicação */
+  border: 2px solid #DC143C; /* Borda vermelho carmesim */
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+  position: relative;
+}
+
+/* Efeito visual para o início do timer */
+.timer-start {
+  animation: startAnimation 1s ease;
+}
+
+/* Animação para o início do timer */
+@keyframes startAnimation {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Estilização do título "Jiu-Jitsu Timer" */
+h1 {
+  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif; /* Fonte mais moderna e esportiva */
+  background: linear-gradient(90deg, #ff0000, #DC143C); /* Gradiente: vermelho vivo e carmesim */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Deixa o gradiente visível no texto */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3); /* Neon mais suave */
+  margin: 0;
+  padding: 10px 0;
+}
+
+/* Estilização dos valores de tempo (3min, 4min, etc.) */
+.timer-option button {
+  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #ff0000; /* Cor vermelho vivo */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3); /* Efeito neon suave */
+  background: none; /* Remove o fundo dos botões */
+  border: none; /* Remove a borda dos botões */
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px;
+  transition: transform 0.3s ease;
+}
+
+.timer-option button:hover {
+  transform: scale(1.05); /* Efeito de "pular" ao passar o mouse */
+}
+
+/* Estilo dos valores de tempo principal (0:00) */
+.timer-display {
+  font-size: 4rem;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(90deg, #ff0000, #DC143C); /* Gradiente para o tempo principal */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3); /* Neon suave para o tempo principal */
+  margin-bottom: 20px;
+}
+
+/* Estilo dos 10 segundos finais */
+.timer-display.warning {
+  animation: warningAnimation 1s infinite; /* Piscar de alerta */
+  color: #ff4500; /* Laranja vermelho para destaque */
+}
+
+/* Animação de alerta para os 10 segundos finais */
+@keyframes warningAnimation {
+  0% { color: #ff4500; }
+  50% { color: #ffffff; }
+  100% { color: #ff4500; }
+}
+
+/* Estilização dos controles do timer */
+.timer-controls {
+  margin-top: 20px;
+}
+
+.timer-controls button {
+  font-size: 1.5rem;
+  color: #ff4500; /* Laranja vermelho */
+  background: none; /* Remove o fundo dos botões */
+  border: 2px solid #ff4500; /* Borda laranja vermelho */
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.timer-controls button:hover {
+  background-color: #ff4500; /* Fundo laranja vermelho ao passar o mouse */
+  color: #ffffff; /* Texto branco ao passar o mouse */
+}
+
+/* Estilo do texto informativo */
+.informative-text {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* Cor do texto branco */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 10px;
+  border-radius: 8px; /* Bordas arredondadas para melhor visual */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 
+               0 0 10px rgba(255, 0, 0, 0.5), 
+               0 0 15px rgba(255, 0, 0, 0.7), 
+               0 0 20px rgba(255, 0, 0, 0.7),
+               0 0 30px rgba(255, 0, 0, 0.8), 
+               0 0 40px rgba(255, 0, 0, 1); /* Efeito neon vermelho */
+}
+
+/* Estilo para esconder o cronômetro até o início */
+.timer-display.hidden {
+  display: none; /* Esconde o cronômetro */
+}
+
+/* Estilo do texto de transição */
+.transition-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #ff0000; /* Cor vermelho vivo */
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3); /* Efeito neon suave */
+  z-index: 10;
+}
+
+/* Segunda frase de transição */
+.transition-text.transition-second {
+  top: 60%;
+  font-size: 1.5rem;
+}

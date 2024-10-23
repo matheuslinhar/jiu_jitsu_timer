@@ -1,0 +1,201 @@
+/* Estilos gerais do corpo */
+body, html {
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Fundo preto piano */
+  color: #FFFFFF; /* Texto branco */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Ajuste para o fundo ocupar toda a tela */
+.intro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle at center, #000000, #111111, #222222); /* Fundo com profundidade */
+  overflow: hidden;
+  position: relative; /* Permite posicionamento de elementos */
+  box-shadow: inset 0 0 100px rgba(255, 0, 0, 0.5); /* Efeito de brilho interno */
+}
+
+/* Tela de carregamento */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a; /* Fundo escuro suave */
+  position: relative;
+}
+
+/* Contêiner da logo e animação */
+.logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%; /* Aumenta o tamanho */
+  max-width: 350px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.05); /* Fundo transparente */
+  border-radius: 20px; /* Bordas mais arredondadas */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5); /* Sombra 3D sob a logo */
+  margin-bottom: 20px;
+}
+
+/* Estilos da logo */
+.logo {
+  width: 100%;
+  height: auto;
+  transform: perspective(500px) rotateX(15deg); /* Efeito 3D leve */
+  transition: transform 0.5s ease;
+}
+
+.logo:hover {
+  transform: perspective(500px) rotateX(0deg); /* Move a logo para a frente quando o mouse passa */
+}
+
+/* Barra de carregamento */
+.loading-bar-container {
+  width: 100%;
+  max-width: 350px; /* Tamanho ajustado */
+  height: 25px;
+  border: 2px solid #FFFFFF;
+  border-radius: 15px; /* Arredondamento maior */
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 20px;
+  box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5); /* Efeito de profundidade dentro da barra */
+}
+
+.loading-bar {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #FF4500, #FF6347, #FF0000); /* Gradiente com tons de vermelho */
+  border-radius: 15px; /* Ajuste de arredondamento */
+  animation: load 3s ease-in-out forwards;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Container do menu */
+.menu-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Botões com efeito 3D */
+.menu-container button {
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #ff0000;
+  background: linear-gradient(145deg, #333333, #111111); /* Fundo com luzes suaves */
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.4), 0 5px 10px rgba(0, 0, 0, 0.7); /* Sombra interna e externa */
+}
+
+.menu-container button:hover {
+  background: linear-gradient(145deg, #ff0000, #8B0000); /* Alteração de fundo no hover */
+  color: #ffffff;
+  box-shadow: 0px 5px 20px rgba(255, 0, 0, 0.6), 0 5px 15px rgba(0, 0, 0, 0.9); /* Sombra mais intensa */
+  transform: translateY(-3px); /* Eleva o botão no hover */
+}
+
+/* Animações dinâmicas no fundo */
+@keyframes dynamicShapes {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+.dynamic-shape {
+  position: absolute;
+  background-color: rgba(255, 0, 0, 0.1); /* Cores suaves */
+  border-radius: 50%;
+  animation: dynamicShapes 10s infinite ease-in-out;
+}
+
+.dynamic-shape-1 {
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  left: 10%;
+  animation-duration: 12s;
+}
+
+.dynamic-shape-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  right: 5%;
+  animation-duration: 18s;
+}
+
+.dynamic-shape-3 {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  left: 75%;
+  animation-duration: 16s;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .logo-container {
+    width: 80%;
+  }
+
+  .loading-bar-container {
+    width: 80%;
+  }
+
+  .menu-container button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Layout responsivo para telas pequenas */
+@media (max-width: 480px) {
+  .logo-container {
+    width: 70%;
+  }
+
+  .menu-container button {
+    font-size: 0.9rem;
+    padding: 7px 14px;
+  }
+}

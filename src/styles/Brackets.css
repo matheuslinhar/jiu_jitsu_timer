@@ -1,0 +1,84 @@
+.brackets-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.adicionar-lutador {
+    margin-bottom: 20px;
+}
+
+.adicionar-lutador input {
+    padding: 10px;
+    width: 60%;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.adicionar-lutador button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.lutadores-lista {
+    margin-bottom: 30px;
+}
+
+.lutadores-lista ul {
+    list-style: none;
+    padding: 0;
+}
+
+.lutadores-lista li {
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.lutadores-lista button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.fases {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fase {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.match {
+    margin: 10px 0;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.campeao {
+    margin-top: 30px;
+}
+
+.campeao h2 {
+    color: #4CAF50;
+    font-size: 24px;
+}
