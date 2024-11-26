@@ -1,4 +1,7 @@
+// src/components/Intro.js
+
 import React, { useState, useEffect } from 'react';
+import { Button } from '@mui/material'; // Importa o componente Button do MUI
 import '../styles/Intro.css';
 
 const Intro = ({ onNavigate }) => {
@@ -6,8 +9,8 @@ const Intro = ({ onNavigate }) => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); // Animação de carregamento dura 3 segundos
+      setLoading(false); // Finaliza o carregamento após 3 segundos
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -26,10 +29,33 @@ const Intro = ({ onNavigate }) => {
       ) : (
         <div className="menu-container">
           <h1>Bem-vindo</h1>
-          <h1>App de Jiu-Jitsu</h1>
-          <button onClick={() => onNavigate('timer')}>Entrar no Timer</button>
-          <button onClick={() => onNavigate('brackets')}>Montar Chaves de Luta</button>
-          <button onClick={() => onNavigate('login')}>Login</button>
+          <div className="menu-buttons">
+            {/* Botões usando MUI Button */}
+            <Button 
+              variant="contained" 
+              color="error" 
+              onClick={() => onNavigate('timer')}
+              className="menu-button"
+            >
+               Timer
+            </Button>
+            <Button 
+              variant="contained" 
+              color="error" 
+              onClick={() => onNavigate('brackets')}
+              className="menu-button"
+            >
+              Montar Chaves
+            </Button>
+            <Button 
+              variant="contained" 
+              color="error" 
+              onClick={() => onNavigate('login')}
+              className="menu-button"
+            >
+              Login
+            </Button>
+          </div>
         </div>
       )}
     </div>

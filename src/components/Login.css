@@ -1,0 +1,121 @@
+/* Container principal */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: none;
+  background: none; /* Fundo geral */
+  color: #fffafa;
+}
+
+/* Título */
+.login-container h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff0000;
+  text-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Grupo de entrada */
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 1rem;
+  color: #ff0000;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background: transparent; /* Fundo transparente */
+  color: #ffffff;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #ff0000;
+  background: rgba(255, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Grupo de botões */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.login-btn, .register-btn {
+  flex: 1;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #ff0000;
+  background: linear-gradient(145deg, #333333, #111111);
+  border: 2px solid #ff0000;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.4), 0 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.login-btn:hover, .register-btn:hover {
+  background: linear-gradient(145deg, #ff0000, #8b0000);
+  color: #ffffff;
+  box-shadow: 0px 5px 20px rgba(255, 0, 0, 0.6), 0 5px 15px rgba(0, 0, 0, 0.9);
+  transform: translateY(-3px);
+}
+
+/* Link de "Esqueceu a senha" */
+.forgot-password {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #ff0000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #ff0000;
+  text-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Mensagem dinâmica */
+.faixa-branca-msg {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: rgba(255, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.5);
+  animation: fadeInOut 5s forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
