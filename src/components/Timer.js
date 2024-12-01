@@ -16,8 +16,22 @@ const Timer = () => {
   const countdownSound = useRef(new Audio('/sounds/countdown.mp3')); // Adicione o caminho correto
   const endSound = useRef(new Audio('/sounds/end-time.mp3')); // Adicione o caminho correto
 
+  // Array de mensagens informativas sobre Jiu-Jitsu
+  const jiuJitsuInfo = [
+    'Sempre mantenha a calma e conserve energia no rola.',
+    'Respeite o ritmo do aprendizado: dominar uma posição básica vale mais do que tentar algo avançado sem entender o fundamento.',
+    'O Jiu-Jitsu é um esporte de técnica, não de força bruta.',
+    'Mentalidade de faixa preta: perseverança e paciência são fundamentais.',
+    'A confiança no Jiu-Jitsu vem da prática e da experiência.',
+    'O Jiu-Jitsu não é só sobre vencer, é sobre evolução pessoal.',
+    'Cada treino é uma oportunidade de aprender algo novo.',
+    'O Jiu-Jitsu é uma arte que não tem fim, sempre há algo a melhorar.',
+    'Respeite seus parceiros de treino e sempre ajude quem está aprendendo.'
+  ];
+
   useEffect(() => {
     let timer;
+    let infoInterval;
 
     if (isCountingDown) {
       countdownSound.current.play();
@@ -57,6 +71,12 @@ const Timer = () => {
             return prev - 1;
           });
         }, 1000);
+
+        // Atualizar a informação de Jiu-Jitsu a cada 5 segundos
+        infoInterval = setInterval(() => {
+          const randomInfo = jiuJitsuInfo[Math.floor(Math.random() * jiuJitsuInfo.length)];
+          setInformativeText(randomInfo);
+        }, 5000);
       }
     } else if (!isRunning && time !== 0) {
       clearInterval(timer);
@@ -64,6 +84,7 @@ const Timer = () => {
 
     return () => {
       clearInterval(timer);
+      clearInterval(infoInterval); // Limpar o intervalo de mensagens de Jiu-Jitsu
       countdownSound.current.pause();
       countdownSound.current.currentTime = 0;
       endSound.current.pause();
@@ -76,6 +97,7 @@ const Timer = () => {
     setCountdown(5); // Iniciar contagem regressiva
     setIsCountingDown(true);
     setIsPaused(false); // Garantir que o timer não esteja pausado
+    setInformativeText(''); // Limpar texto informativo ao começar
 
     // Definir o texto informativo com base no tempo selecionado
     switch (minutes) {

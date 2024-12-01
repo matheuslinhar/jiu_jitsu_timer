@@ -1,11 +1,8 @@
-// src/App.js
-
 import React, { useState } from 'react';
 import Intro from './components/Intro';
 import Timer from './components/Timer';
 import Brackets from './components/Brackets';
 import Login from './components/Login';
-
 import './styles.css';
 
 const App = () => {
@@ -21,7 +18,6 @@ const App = () => {
       {currentPage === 'timer' && <Timer />}
       {currentPage === 'brackets' && <Brackets />}
       {currentPage === 'login' && <Login />}
-      {/* O resto das páginas (timer, brackets, login) podem ser navegadas a partir das opções da página intro */}
     </div>
   );
 };

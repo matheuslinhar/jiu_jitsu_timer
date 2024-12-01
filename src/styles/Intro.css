@@ -58,11 +58,12 @@ body, html {
   width: 100%;
   height: auto;
   transform: perspective(500px) rotateX(15deg); /* Efeito 3D leve */
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, box-shadow 0.3s ease; /* Adicionando transição suave */
 }
 
 .logo:hover {
   transform: perspective(500px) rotateX(0deg); /* Move a logo para a frente quando o mouse passa */
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.6); /* Mais ênfase na sombra */
 }
 
 /* Barra de carregamento */
@@ -146,6 +147,7 @@ body, html {
   background-color: rgba(255, 0, 0, 0.1); /* Cores suaves */
   border-radius: 50%;
   animation: dynamicShapes 10s infinite ease-in-out;
+  z-index: -1; /* Coloca as formas atrás dos outros elementos */
 }
 
 .dynamic-shape-1 {

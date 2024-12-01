@@ -147,6 +147,7 @@ h1 {
   color: #ff0000; /* Cor vermelho vivo */
   text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.3); /* Efeito neon suave */
   z-index: 10;
+  display: none; /* Inicia oculto */
 }
 
 /* Segunda frase de transição */
